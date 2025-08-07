@@ -22,7 +22,7 @@
 #define LV_TICK_CUSTOM_SYS_TIME_EXPR (esp_timer_get_time() / 1000)
 
 /* Enable/disable the built-in log system */
-#define LV_USE_LOG              1
+#define LV_USE_LOG              0
 #define LV_LOG_LEVEL            LV_LOG_LEVEL_WARN
 #define LV_LOG_PRINTF           1
 
@@ -38,11 +38,11 @@
 /*=====================
  *  Fonts
  *====================*/
-#define LV_FONT_MONTSERRAT_12   1
-#define LV_FONT_MONTSERRAT_16   1
+#define LV_FONT_MONTSERRAT_12   0
+#define LV_FONT_MONTSERRAT_16   0
 #define LV_FONT_MONTSERRAT_18   1
-#define LV_FONT_MONTSERRAT_20   1
-#define LV_FONT_MONTSERRAT_28   1
+#define LV_FONT_MONTSERRAT_20   0
+#define LV_FONT_MONTSERRAT_28   0
 
 #define LV_USE_FONT_PLACEHOLDER 1
 
