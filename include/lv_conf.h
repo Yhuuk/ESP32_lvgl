@@ -14,7 +14,7 @@
 // #define LV_VER_RES_MAX          (240)
 #define LV_HOR_RES_MAX          (240)
 #define LV_VER_RES_MAX          (320)
-#define LV_COLOR_DEPTH          16
+#define LV_COLOR_DEPTH          16      // Color depth in bits (16 for RGB565)
 #define LV_COLOR_16_SWAP        0      // Swap bytes for 16-bit colors (little-endian MCUs like ESP32)
 
 #define LV_TICK_CUSTOM          1
