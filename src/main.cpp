@@ -1,7 +1,7 @@
 #include <lvgl.h>
 #include <TFT_eSPI.h>
 #include <XPT2046_Touchscreen.h>
-#include "ui.h"
+#include "ui.h"  // 包含 UI 相关的头文件
 
 TFT_eSPI tft = TFT_eSPI();  // TFT 驱动实例
 
@@ -18,7 +18,7 @@ SPIClass mySPI(HSPI);  // 或者 HSPI，看你连接的是哪一组 SPI
 #define DCLK 25  /* Clock pin (T_CLK) of touch screen */
 
 // #define TOUCH_CS 33    // 你的 XPT2046 的 CS 引脚
-#define TOUCH_IRQ 255  // 没接 IRQ 就设 255
+#define TOUCH_IRQ 36  // 没接 IRQ 就设 255
 #define TOUCH_ROTATION 0
 
 XPT2046_Touchscreen ts(DCS, TOUCH_IRQ);  // ✅ 创建触摸屏对象
@@ -77,7 +77,7 @@ void setup() {
     tft.setRotation(0);  // 根据实际调整 数值0~3
     tft.fillScreen(TFT_BLACK); // 清屏（只执行一次，后续由LVGL控制屏幕内容）
 
-    mySPI.begin(DCLK, DIN, DOUT, DCS);  // 初始化 SPI，DCLK, DIN, DOUT, DCS 分别对应触摸屏的时钟、数据输入、数据输出和片选引脚
+    mySPI.begin(DCLK, DOUT,DIN, DCS);  // 初始化 SPI，DCLK, DIN, DOUT, DCS 分别对应触摸屏的时钟、数据输入、数据输出和片选引脚
     mySPI.setFrequency(2000000); // 设置 SPI 频率为 2MHz
     ts.begin(mySPI);  // 初始化触摸屏，传入 SPI 对象
     ts.setRotation(TOUCH_ROTATION);  // 根据实际调整 数值0~3
